@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    /* Subheading Styling */
+    .sq-subheading {
+        font-size: 10px;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: #4b5563; /* gray-600 */
+        margin-bottom: 2rem;
+    }
+
+    /* Main Typography Styling */
+    .sq-heading-text {
+        font-family: '"Cormorant Garamond"', serif;
+        font-weight: 100;
+        color: #e5e5e5;
+        line-height: 1.4;
+        max-width: 56rem;
+        font-size: 1rem; /* 30px fallback */
+       
+    }
+
+    @media (min-width: 768px) {
+        .sq-heading-text {
+            font-size: 3rem; /* 48px md */
+            
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .sq-heading-text {
+            font-size: 2.75rem; /* 60px lg */
+        }
+    }
+
+    .sq-italic-word {
+        font-style: italic;
+        color: #ffffff;
+    }
+
+    /* Custom Intro Animations */
+    .blur-word {
+        filter: blur(15px);
+        opacity: 0;
+        transform: scale(0.95);
+        transition: filter 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    opacity 1.5s cubic-bezier(0.16, 1, 0.3, 1), 
+                    transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        display: inline-block;
+        margin-left: 4px;
+    }
+
+    .blur-word.reveal {
+        filter: blur(0px);
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .typing-cursor {
+        display: inline-block;
+        width: 3px;
+        height: 1em;
+        background-color: #e5e5e5;
+        vertical-align: text-bottom;
+        animation: blink 1s step-end infinite;
+        margin-left: 4px;
+        transition: opacity 0.3s ease;
+    }
+
+    @keyframes blink { 
+        0%, 100% { opacity: 1; } 
+        50% { opacity: 0; } 
+    }
+/* detailes product page */
+        /* Slider Container */
+        .slider-wrapper {
+            position: relative;
+            width: 100%;
+           
+            aspect-ratio: 16 / 10;
+            background-color: #000;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            /* Smooth transition for fullscreen */
+            transition: all 0.3s ease;
+        }
+
+        /* Fullscreen state adjust */
+        .slider-wrapper:fullscreen {
+            max-width: 100%;
+            width: 100vw;
+            height: 100vh;
+            aspect-ratio: auto;
+        }
+
+        /* The Main Image */
+        .slider-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 1;
+        }
+
+        /* Fade effect class */
+        .slider-image.fading {
+            opacity: 0.3;
+        }
+
+        /* Toolbar / Control Bar */
+        .toolbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(to top, rgba(30, 30, 30, 0.95), rgba(30, 30, 30, 0.7));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            z-index: 10;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Button styles */
+        .toolbar-btn {
+            background: none;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #b3b3b3;
+            transition: color 0.2s ease, transform 0.1s ease;
+        }
+
+        .toolbar-btn:hover {
+            color: #ffffff;
+            transform: scale(1.1);
+        }
+
+        .toolbar-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* SVG Icons */
+        .toolbar-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        /* Specific grid icon adjustments based on your image */
+        .grid-icon {
+            width: 22px !important;
+            height: 22px !important;
+        }
+
+/* soul page animation */
+ 
+
+    .fl-cards-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+            box-sizing: border-box;
+            /* Optional: jodi apnar background onno color hoy, eta use korben na */
+            /* background-color: #050505; */ 
+        }
+
+        /* 2-Column Grid Layout */
+        .fl-cards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            width: 100%;
+        }
+
+        @media (min-width: 640px) {
+            .fl-cards-grid {
+                grid-template-columns: repeat(2, 1fr); /* Tablet e 2 column */
+            }
+        }
+
+        @media (min-width: 900px) {
+            .fl-cards-grid {
+                grid-template-columns: repeat(3, 1fr); /* Desktop e 3 column (Chobir moto) */
+            }
+        }
+
+        /* Card Design */
+        .fl-glass-card {
+            background: rgba(255, 255, 255, 0.02); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.06); /* Ekdom subtle border */
+            border-radius: 16px; /* Chobir moto ektu beshi rounded corners */
+            padding: 3rem 1.5rem; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .fl-glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        /* Hover Glow Effect */
+        .fl-card-glow {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(99, 102, 241, 0.1));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .fl-glass-card:hover .fl-card-glow {
+            opacity: 1;
+        }
+
+        /* Icon Styling */
+        .fl-card-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: #818cf8; /* Chobir moto perfect indigo/purple color */
+            margin-bottom: 1rem; /* Text theke durotto ektu komano holo */
+            transition: all 0.4s ease;
+        }
+
+        .fl-glass-card:hover .fl-card-icon {
+            color: #a5b4fc;
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.5));
+        }
+
+        /* Text Styling */
+        .fl-card-text {
+            font-family: 'IvyOra Display', 'Cormorant Garamond', serif; /* Chobir moto Serif font */
+            font-size: 1.1rem; 
+            font-weight: 400;
+            letter-spacing: 0.05em; /* Ektu gap deya holo */
+            color: #d4d4d4;
+            transition: color 0.3s ease;
+        }
+
+        .fl-glass-card:hover .fl-card-text {
+            color: #ffffff;
+        }
+
+</style>
+<body>
+    <!-- 4. JavaScript Animation Logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const section = document.getElementById('sq-soul-section');
+        const textElement = document.getElementById('sq-type-text');
+        const cursorElement = document.getElementById('sq-type-cursor');
+        const blurWords = section.querySelectorAll('.blur-word');
+        
+        const textToType = "A collection of contemplative floral artworks inviting pause,";
+        let isTypingStarted = false;
+
+        // Observer to start animation when scrolling into view
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting && !isTypingStarted) {
+                isTypingStarted = true;
+                setTimeout(typeWriter, 300); // 300ms delay before typing
+            }
+        }, { threshold: 0.4 });
+
+        if(section) observer.observe(section);
+
+        let charIndex = 0;
+        
+        // Typing function
+        function typeWriter() {
+            if (charIndex < textToType.length) {
+                if(textElement) {
+                    textElement.innerHTML += textToType.charAt(charIndex);
+                }
+                charIndex++;
+                const typeSpeed = Math.random() * 30 + 30; // Random speed for realistic typing
+                setTimeout(typeWriter, typeSpeed);
+            } else {
+                if(cursorElement) cursorElement.style.opacity = '0'; // Hide cursor
+                setTimeout(revealBlurWords, 400); // Trigger blur words reveal
+            }
+        }
+
+        // Reveal blur words function
+        function revealBlurWords() {
+            blurWords.forEach((word, index) => {
+                setTimeout(() => {
+                    word.classList.add('reveal');
+                }, index * 800); // 800ms gap between each word
+            });
+        }
+    });
+  
+  // code for slider 
+  
+           // Apnar image list ekhane add korun
+        const images = [
+            "https://images.squarespace-cdn.com/content/6892d1271cc79653953401d8/0a068511-6137-4d0f-9ed8-85c3502ddfad/SW-01-tabula-rasa.jpg?content-type=image%2Fjpeg", // Autumn 1
+            "https://images.squarespace-cdn.com/content/6892d1271cc79653953401d8/4cabe3de-b45a-4e87-9660-4bfb7b003012/Screenshot+2026-04-07+at+2.26.30%E2%80%AFPM.png?content-type=image%2Fpng", // Autumn 2
+            "https://images.squarespace-cdn.com/content/6892d1271cc79653953401d8/ec9aef3d-06e5-4ba2-8df1-02c6b9e77ff5/SW_aura_2.jpg?content-type=image%2Fjpeg", // Autumn 3
+            "https://images.squarespace-cdn.com/content/6892d1271cc79653953401d8/d7a60c86-1c2d-496c-aa2c-253e1376270f/SW_aura_3.jpg?content-type=image%2Fjpeg"  // Autumn 4
+        ];
+
+        let currentIndex = 0;
+
+        // Elements select kora
+        const sliderImg = document.getElementById('sliderImg');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const sliderContainer = document.getElementById('sliderContainer');
+
+        // Image change korar function (smooth fade in/out soho)
+        function updateImage(newIndex) {
+            // Fade out
+            sliderImg.classList.add('fading');
+            
+            setTimeout(() => {
+                // Notun image source set kora
+                sliderImg.src = images[newIndex];
+                
+                // Fade in
+                sliderImg.onload = () => {
+                    sliderImg.classList.remove('fading');
+                };
+            }, 300); // 300ms transition time
+        }
+
+        // Samne jaoar (Next) button click event
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage(currentIndex);
+        });
+
+        // Pichone jaoar (Previous) button click event
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage(currentIndex);
+        });
+
+        // Fullscreen toggle korar jonno function
+        fullscreenBtn.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                // Fullscreen e jaoyar request
+                if (sliderContainer.requestFullscreen) {
+                    sliderContainer.requestFullscreen();
+                } else if (sliderContainer.webkitRequestFullscreen) { /* Safari */
+                    sliderContainer.webkitRequestFullscreen();
+                } else if (sliderContainer.msRequestFullscreen) { /* IE11 */
+                    sliderContainer.msRequestFullscreen();
+                }
+            } else {
+                // Fullscreen theke ber hobar request
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) { /* Safari */
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { /* IE11 */
+                    document.msExitFullscreen();
+                }
+            }
+        });
+
+        // Keyboard er Left abong Right arrow theke slider control korar option
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') {
+                nextBtn.click();
+            } else if (e.key === 'ArrowLeft') {
+                prevBtn.click();
+            }
+        });
+  
+ // code for soul pge animation 
+
+</script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "The Future of Decentralized Intelligence in Modern Governance",
+      "description": "As systems evolve, the intersection of ethics and efficiency becomes the new frontier for global leadership.",
+      "category": "Global Crisis",
+      "categoryColor": "bg-indigo-600",
+      "author": "Alexander Thorne",
+      "authorRole": "Senior Investigative Journalist",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop",
+      "readTime": "8 min read",
+      "timestamp": "Updated 2h ago",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Market shifts indicate a paradigm change in venture capital for 2026",
+      "description": "Investment landscape transforms as institutional players recalibrate their strategies.",
+      "category": "Business",
+      "categoryColor": "bg-emerald-600",
+      "author": "Sarah Mitchell",
+      "authorRole": "Finance Correspondent",
+      "image": "https://images.unsplash.com/photo-1611974260368-ae2f233cf8c9?w=600&h=400&fit=crop",
+      "readTime": "4 min read",
+      "timestamp": "Updated 3h ago",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "title": "Tech Giants Face New Regulatory Scrutiny Across Three Continents",
+      "description": "Governments worldwide tighten oversight of artificial intelligence and data privacy practices.",
+      "category": "Technology",
+      "categoryColor": "bg-blue-600",
+      "author": "David Chen",
+      "authorRole": "Tech Regulation Expert",
+      "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&h=400&fit=crop",
+      "readTime": "6 min read",
+      "timestamp": "Updated 4h ago",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "Climate Technologies Attract Record $50B in Investment",
+      "description": "Sustainable innovation accelerates as corporates shift capital toward net-zero solutions.",
+      "category": "Science",
+      "categoryColor": "bg-green-600",
+      "author": "Emma Rodriguez",
+      "authorRole": "Environmental Reporter",
+      "image": "https://images.unsplash.com/photo-1559027615-cd f1e3c4b8f8?w=600&h=400&fit=crop",
+      "readTime": "5 min read",
+      "timestamp": "Updated 5h ago",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Healthcare Systems Revolutionized by AI-Powered Diagnostics",
+      "description": "Breakthrough in machine learning accelerates disease detection and treatment planning.",
+      "category": "Health",
+      "categoryColor": "bg-rose-600",
+      "author": "Dr. James Wilson",
+      "authorRole": "Medical Research Analyst",
+      "image": "https://images.unsplash.com/photo-1576091160550-112173f7f869?w=600&h=400&fit=crop",
+      "readTime": "7 min read",
+      "timestamp": "Updated 6h ago",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Political Tensions Rise as New Trade Agreements Reshape Global Order",
+      "description": "Diplomatic negotiations reach critical juncture with economic implications worldwide.",
+      "category": "Politics",
+      "categoryColor": "bg-purple-600",
+      "author": "Marcus Thompson",
+      "authorRole": "Political Correspondent",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop",
+      "readTime": "6 min read",
+      "timestamp": "Updated 7h ago",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "Opinion: Why Decentralization is Essential for Financial Inclusion",
+      "description": "Blockchain technology promises to revolutionize banking for the unbanked populations.",
+      "category": "Opinion",
+      "categoryColor": "bg-amber-600",
+      "author": "Patricia Lee",
+      "authorRole": "Financial Analyst",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      "readTime": "4 min read",
+      "timestamp": "Updated 8h ago",
+      "featured": false
+    }
+  ]
+}
