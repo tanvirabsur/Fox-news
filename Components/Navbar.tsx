@@ -1,13 +1,18 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Search, Sun, Moon, Globe, TrendingUp } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = usePathname();
 
+
+
+  
   // Lohika ti panagbaliw ti tema (Theme switching logic)
   useEffect(() => {
     if (isDarkMode) {
@@ -35,6 +40,10 @@ const Navbar = () => {
     { name: 'Health', href: '#' },
     { name: 'Opinion', href: '#' },
   ];
+
+  if(location === '/login' || location === '/register' || location === '/dashboard') {
+    return null; // Agsardeng ti panag-render no adda iti login wenno register a page
+  }
 
   return (
     <div className={`${isDarkMode ? 'bg-[#09090b]' : 'bg-[#f8fafc]'} transition-colors duration-500 font-sans`}>

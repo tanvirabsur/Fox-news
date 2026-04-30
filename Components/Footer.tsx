@@ -1,6 +1,13 @@
 'use client';
 
+import { usePathname } from "next/navigation";
+
 const Footer = () => {
+  const location = usePathname(); 
+
+    if(location === '/login' || location === '/register' || location === '/dashboard') {
+      return null;
+    }
   return (
     <footer className="border-t border-slate-200 bg-slate-50 text-slate-700">
       <div className="max-w-7xl mx-auto px-4 py-12 md:px-6">
