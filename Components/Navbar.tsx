@@ -2,25 +2,14 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Search, Sun, Moon, Globe, TrendingUp } from 'lucide-react';
 import { usePathname } from 'next/navigation';
+import { useTheme } from '@/Providers/ThemeProvider';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = usePathname();
-
-
-
-  
-  // Lohika ti panagbaliw ti tema (Theme switching logic)
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
+  const { isDark, toggleTheme } = useTheme();
 
   // Panag-monitor ti scroll para iti aesthetics (Scroll monitoring for aesthetics)
   useEffect(() => {
@@ -46,10 +35,10 @@ const Navbar = () => {
   }
 
   return (
-    <div className={`${isDarkMode ? 'bg-[#09090b]' : 'bg-[#f8fafc]'} transition-colors duration-500 font-sans`}>
+    <div className={`${isDark ? 'bg-[#0f172a]' : 'bg-[#f8fafc]'} transition-colors duration-500 font-sans`}>
       
       {/* Baras iti ngato (Top Bar) */}
-      <div className={`hidden md:flex transition-all duration-300 ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-slate-900 border-slate-800'} text-white py-2 px-6 justify-between items-center text-[11px] font-medium uppercase tracking-wider border-b`}>
+      <div className={`hidden md:flex transition-all duration-300 ${isDark ? 'bg-slate-900 border-slate-800' : 'bg-slate-900 border-slate-800'} text-white py-2 px-6 justify-between items-center text-[11px] font-medium uppercase tracking-wider border-b`}>
         <div className="flex gap-6 items-center">
           <span className="flex items-center gap-1">
             <Globe size={12} className="text-indigo-400" />
@@ -76,8 +65,8 @@ const Navbar = () => {
       {/* Kangrunaan a Navbar (Main Navbar) */}
       <nav className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? (isDarkMode ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 shadow-2xl' : 'bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-lg') 
-          : (isDarkMode ? 'bg-zinc-950' : 'bg-white')
+          ? (isDark ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 shadow-2xl' : 'bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-lg') 
+          : (isDark ? 'bg-zinc-950' : 'bg-white')
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 md:h-24">
@@ -85,7 +74,7 @@ const Navbar = () => {
             {/* Logo Section */}
             <div className="shrink-0 flex items-center group cursor-pointer">
               <div className="flex flex-col items-start">
-                <span className={`text-3xl md:text-4xl font-serif font-black tracking-tight ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+                <span className={`text-3xl md:text-4xl font-serif font-black tracking-tight ${isDark ? 'text-white' : 'text-slate-900'}`}>
                   THE<span className="text-indigo-600">INSIGHT</span>
                 </span>
                 <div className="h-1 w-full bg-linear-to-r from-indigo-600 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
@@ -100,7 +89,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className={`relative text-sm font-semibold tracking-wide transition-all duration-300 hover:text-indigo-600 group ${
-                    link.active ? 'text-indigo-600' : (isDarkMode ? 'text-zinc-400' : 'text-slate-600')
+                    link.active ? 'text-indigo-600' : (isDark ? 'text-zinc-400' : 'text-slate-600')
                   }`}
                 >
                   {link.name}
@@ -113,22 +102,22 @@ const Navbar = () => {
             <div className="flex items-center space-x-2 md:space-x-4">
               <button 
                 onClick={() => setIsSearchOpen(!isSearchOpen)}
-                className={`p-2.5 rounded-xl transition-all ${isDarkMode ? 'hover:bg-zinc-800 text-zinc-400' : 'hover:bg-slate-100 text-slate-500'}`}
+                className={`p-2.5 rounded-xl transition-all ${isDark ? 'hover:bg-zinc-800 text-zinc-400' : 'hover:bg-slate-100 text-slate-500'}`}
                 aria-label="Search"
               >
                 <Search size={20} />
               </button>
               
               <button 
-                onClick={() => setIsDarkMode(!isDarkMode)}
-                className={`p-2.5 rounded-xl transition-all ${isDarkMode ? 'hover:bg-zinc-800 text-amber-400' : 'hover:bg-slate-100 text-slate-500'}`}
+                onClick={toggleTheme}
+                className={`p-2.5 rounded-xl transition-all ${isDark ? 'hover:bg-zinc-800 text-amber-400' : 'hover:bg-slate-100 text-slate-500'}`}
                 aria-label="Toggle Theme"
               >
-                {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+                {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
 
               <button className={`hidden sm:flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all shadow-sm active:scale-95 ${
-                isDarkMode 
+                isDark 
                   ? 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-indigo-900/20' 
                   : 'bg-slate-900 hover:bg-slate-800 text-white shadow-slate-200'
               }`}>
@@ -139,7 +128,7 @@ const Navbar = () => {
               <div className="lg:hidden">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  className={`p-2.5 rounded-xl transition-all ${isDarkMode ? 'text-white hover:bg-zinc-800' : 'text-slate-900 hover:bg-slate-100'}`}
+                  className={`p-2.5 rounded-xl transition-all ${isDark ? 'text-white hover:bg-zinc-800' : 'text-slate-900 hover:bg-slate-100'}`}
                 >
                   {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -151,9 +140,9 @@ const Navbar = () => {
         {/* Baras ti panagbirok (Search Bar) */}
         <div className={`absolute w-full border-b transition-all duration-300 overflow-hidden ${
           isSearchOpen ? 'max-h-24 opacity-100 py-4 translate-y-0' : 'max-h-0 opacity-0 -translate-y-4'
-        } ${isDarkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-slate-200'}`}>
+        } ${isDark ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-slate-200'}`}>
           <div className="max-w-4xl mx-auto px-4 flex items-center">
-            <div className={`flex-1 flex items-center rounded-2xl px-6 py-3 ${isDarkMode ? 'bg-zinc-800' : 'bg-slate-100'}`}>
+            <div className={`flex-1 flex items-center rounded-2xl px-6 py-3 ${isDark ? 'bg-zinc-800' : 'bg-slate-100'}`}>
               <Search size={18} className="text-slate-400 mr-3" />
               <input 
                 type="text" 
@@ -174,14 +163,14 @@ const Navbar = () => {
         {/* Mobile Dropdown */}
         <div className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden ${
           isMenuOpen ? 'max-h-screen border-t' : 'max-h-0'
-        } ${isDarkMode ? 'bg-zinc-950 border-zinc-800' : 'bg-white border-slate-100'}`}>
+        } ${isDark ? 'bg-zinc-950 border-zinc-800' : 'bg-white border-slate-100'}`}>
           <div className="px-6 pt-4 pb-12 space-y-4">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 className={`block py-3 text-lg font-bold border-b transition-colors ${
-                  isDarkMode ? 'border-zinc-900 text-zinc-300 hover:text-indigo-400' : 'border-slate-50 text-slate-700 hover:text-indigo-600'
+                  isDark ? 'border-zinc-900 text-zinc-300 hover:text-indigo-400' : 'border-slate-50 text-slate-700 hover:text-indigo-600'
                 }`}
               >
                 {link.name}

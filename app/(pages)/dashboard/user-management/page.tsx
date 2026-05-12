@@ -58,7 +58,7 @@ export default function Page() {
           <h2 className="text-2xl font-bold text-gray-900">User Management</h2>
           <p className="text-gray-500">Manage portal roles, permissions, and account status.</p>
         </div>
-        <button className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition-colors shadow-sm shadow-blue-500/10">
+        <button className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors shadow-sm shadow-indigo-500/10">
           <UserPlus size={18} className="mr-2" /> Add New User
         </button>
       </div>
@@ -87,14 +87,14 @@ export default function Page() {
             placeholder="Search users by name or email..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-2xl text-sm text-gray-700 outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full pl-12 pr-4 py-3 border border-gray-200 rounded-2xl text-sm text-gray-700 outline-none focus:ring-2 focus:ring-indigo-500"
           />
         </div>
 
         <select
           value={selectedRole}
           onChange={(e) => setSelectedRole(e.target.value as 'All' | PortalUser['role'])}
-          className="w-full lg:w-56 p-3 border border-gray-200 rounded-2xl text-sm text-gray-700 outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+          className="w-full lg:w-56 p-3 border border-gray-200 rounded-2xl text-sm text-gray-700 outline-none focus:ring-2 focus:ring-indigo-500 bg-white"
         >
           <option value="All">All Roles</option>
           <option value="Admin">Admin</option>
@@ -138,11 +138,11 @@ export default function Page() {
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="inline-flex items-center gap-2 text-sm font-medium text-blue-600">
+                      <div className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600">
                         <select
                           value={user.role}
                           onChange={(e) => updateRole(user.id, e.target.value as PortalUser['role'])}
-                          className="appearance-none bg-transparent text-blue-600 font-semibold focus:outline-none"
+                          className="appearance-none bg-transparent text-indigo-600 font-semibold focus:outline-none"
                         >
                           <option value="Admin">Admin</option>
                           <option value="Editor">Editor</option>

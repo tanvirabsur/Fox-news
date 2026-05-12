@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavbarWrapper from "@/Components/NavbarWrapper";
 import Footer from "@/Components/Footer";
+import FooterWrapper from "@/Components/FooterWrapper";
+import { ThemeProvider } from "@/Providers/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,18 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-
-
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <NavbarWrapper />
-  
-          {children}
-  
-          <Footer />
+        <ThemeProvider>
+          <NavbarWrapper />
+    
+            {children}
+    
+           <FooterWrapper/>
+        </ThemeProvider>
       </body>
     </html>
   );
