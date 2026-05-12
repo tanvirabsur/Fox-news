@@ -150,30 +150,30 @@ export default function MediaAssetsPage() {
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-5 gap-4">
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-indigo-900">
           <div className="text-sm text-gray-600 dark:text-gray-400">Total Assets</div>
           <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mt-1">{stats.total}</div>
         </div>
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-slate-700">
           <div className="text-sm text-gray-600 dark:text-gray-400">Processing</div>
           <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-1">{stats.processing}</div>
         </div>
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-slate-700">
           <div className="text-sm text-gray-600 dark:text-gray-400">Ready</div>
           <div className="text-2xl font-bold text-green-600 dark:text-green-400 mt-1">{stats.ready}</div>
         </div>
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-slate-700">
           <div className="text-sm text-gray-600 dark:text-gray-400">Failed</div>
           <div className="text-2xl font-bold text-red-600 dark:text-red-400 mt-1">{stats.failed}</div>
         </div>
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-slate-700">
           <div className="text-sm text-gray-600 dark:text-gray-400">Total Size</div>
           <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mt-1">{formatSize(stats.totalSize)}</div>
         </div>
       </div>
 
       {/* Filters and Search */}
-      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700 space-y-4">
+      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-indigo-900 space-y-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
@@ -218,7 +218,7 @@ export default function MediaAssetsPage() {
           const TypeIcon = typeConfig[asset.type].icon;
           const StatusIcon = statusConfig[asset.status].icon;
           return (
-            <div key={asset.id} className="bg-white dark:bg-slate-800 rounded-lg border border-gray-200 dark:border-slate-700 overflow-hidden hover:border-indigo-300 dark:hover:border-indigo-500 transition">
+            <div key={asset.id} className="bg-white dark:bg-slate-800 rounded-lg border border-indigo-100 dark:border-indigo-900 overflow-hidden hover:bg-indigo-50 dark:hover:bg-slate-700 transition">
               {/* Card Header with Type and Status */}
               <div className={`${typeConfig[asset.type].bg} p-4 flex items-start justify-between`}>
                 <TypeIcon className={`w-6 h-6 ${typeConfig[asset.type].color}`} />

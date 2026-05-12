@@ -133,19 +133,19 @@ export default function PublishingSchedulePage() {
 
       {/* Summary Stats */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-indigo-900">
           <div className="text-sm text-gray-600 dark:text-gray-400">Scheduled</div>
           <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mt-1">{scheduledCount}</div>
         </div>
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-slate-700">
           <div className="text-sm text-gray-600 dark:text-gray-400">Published</div>
           <div className="text-2xl font-bold text-green-600 dark:text-green-400 mt-1">{publishedCount}</div>
         </div>
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-slate-700">
           <div className="text-sm text-gray-600 dark:text-gray-400">Total Views</div>
           <div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mt-1">{(totalViews / 1000).toFixed(1)}K</div>
         </div>
-        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700">
+        <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-slate-700">
           <div className="text-sm text-gray-600 dark:text-gray-400">Avg Engagement</div>
           <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mt-1">
             {(mockScheduled.reduce((sum, a) => sum + a.engagement, 0) / mockScheduled.length).toFixed(0)}
@@ -154,7 +154,7 @@ export default function PublishingSchedulePage() {
       </div>
 
       {/* Filters and Search */}
-      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700 space-y-4">
+      <div className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-indigo-900 mb-6 space-y-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <div className="flex-1 relative">
             <Search className="absolute left-3 top-3 w-4 h-4 text-gray-400" />
@@ -196,7 +196,7 @@ export default function PublishingSchedulePage() {
         {filteredAndSorted.map((article) => {
           const StatusIcon = statusConfig[article.status].icon;
           return (
-            <div key={article.id} className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition">
+            <div key={article.id} className="bg-white dark:bg-slate-800 rounded-lg p-4 border border-indigo-100 dark:border-slate-700 hover:border-indigo-300 dark:hover:border-indigo-500 transition">
               <div className="flex items-start gap-4">
                 {/* Image */}
                 <div className="text-4xl flex-shrink-0">{article.image}</div>
