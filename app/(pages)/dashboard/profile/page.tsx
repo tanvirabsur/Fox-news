@@ -4,7 +4,7 @@ import React from 'react';
 
 export default function Page() {
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 space-y-6 animate-in fade-in duration-500">
+    <div className="w-full space-y-6 animate-in fade-in duration-500">
       <div className="mb-6">
         <h2 className="text-2xl font-bold text-gray-900">User Profile</h2>
         <p className="text-gray-500">Manage your personal information and account settings.</p>

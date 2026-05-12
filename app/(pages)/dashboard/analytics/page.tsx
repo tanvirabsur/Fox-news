@@ -134,7 +134,7 @@ export default function Analytics() {
   const maxEngagement = Math.max(...chartData.map((d) => d.engagement));
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <div className="w-full space-y-8">
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div className="space-y-2">

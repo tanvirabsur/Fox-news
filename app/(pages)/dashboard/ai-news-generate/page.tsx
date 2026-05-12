@@ -92,7 +92,7 @@ export default function AINewsGenerate() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 space-y-8">
+    <div className="w-full space-y-8">
       {/* Header Section */}
       <div className="space-y-2">
         <div className="flex items-center gap-3">

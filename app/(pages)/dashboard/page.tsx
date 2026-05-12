@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {
   Newspaper,  Search, Bell, TrendingUp, MessageSquare, Eye
 } from 'lucide-react';
+import Link from 'next/link';
 import ArticleTable from '@/Components/ArticleTable';
 
 
@@ -45,9 +46,12 @@ const Dashboard = () => {
             <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
           </button>
           <div className="h-8 w-px bg-gray-200 mx-2"></div>
-          <button className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded hover:bg-indigo-700 transition-colors">
+          <Link
+            href="/dashboard/add-news"
+            className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded hover:bg-indigo-700 transition-colors"
+          >
             Add News
-          </button>
+          </Link>
         </div>
       </header>
 

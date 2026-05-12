@@ -81,8 +81,8 @@ export default function layout({ children }: { children: React.ReactNode }) {
                 </div>
             </aside>
             {/* Main Content Area */}
-            <main className="flex-1 min-w-0 overflow-hidden">
-                <div className="h-full overflow-y-auto overflow-x-hidden">
+            <main className="flex-1 min-w-0 overflow-hidden bg-slate-50">
+                <div className="h-full overflow-y-auto overflow-x-hidden px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
                     {children}
                 </div>
             </main>
