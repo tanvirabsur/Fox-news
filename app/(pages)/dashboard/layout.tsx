@@ -1,5 +1,5 @@
 "use client";
-import { BarChart3, LayoutDashboard, Menu, Newspaper, PlusCircle, Settings, Users, X, Zap, Activity, Gauge } from 'lucide-react';
+import { BarChart3, LayoutDashboard, Menu, Newspaper, PlusCircle, Settings, Users, X, Zap, Activity, Gauge, Clock, Calendar, Image, History } from 'lucide-react';
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -13,6 +13,10 @@ export default function layout({ children }: { children: React.ReactNode }) {
         { name: 'All News', icon: <Newspaper size={20} />, path: '/dashboard/all-news' },
         { name: 'Add News', icon: <PlusCircle size={20} />, path: '/dashboard/add-news' },
         { name: 'AI News Generate', icon: <Zap size={20} />, path: '/dashboard/ai-news-generate' },
+        { name: 'Pending Articles', icon: <Clock size={20} />, path: '/dashboard/pending-articles' },
+        { name: 'Publishing Queue', icon: <Calendar size={20} />, path: '/dashboard/publishing-queue' },
+        { name: 'Media Assets', icon: <Image size={20} />, path: '/dashboard/media-queue' },
+        { name: 'Article Track', icon: <History size={20} />, path: '/dashboard/article-track' },
         { name: 'Analytics', icon: <BarChart3 size={20} />, path: '/dashboard/analytics' },
         { name: 'Activity Log', icon: <Activity size={20} />, path: '/dashboard/activity-logger' },
         { name: 'Performance', icon: <Gauge size={20} />, path: '/dashboard/performance' },
