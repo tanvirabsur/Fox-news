@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import fakenewsData from "../../../public/fakenews.json";
+import ListenControls from '@/Components/ListenControls'
 
 interface Article {
   id: number;
@@ -90,6 +91,9 @@ export default async function NewsDetailPage({ params }: Props) {
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
               {article.description}
             </p>
+            <div>
+              <ListenControls text={`${article.title}. ${article.description}`} gender="female" />
+            </div>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <p className="font-semibold text-slate-900">{article.author}</p>

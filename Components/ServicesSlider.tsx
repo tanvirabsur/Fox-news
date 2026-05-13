@@ -34,7 +34,7 @@ export default function ServicesSlider() {
 
   return (
     <section className="my-12">
-      <div className="max-w-9xl mx-auto px-4">
+      <div className="site-container site-container--wide px-4">
         <div className="flex items-center justify-between mb-6">
           <div>
             <p className="text-xs text-indigo-600 font-semibold uppercase tracking-[0.32em]">Our Services</p>

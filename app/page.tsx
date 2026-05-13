@@ -3,6 +3,7 @@
 import FeedNews from "@/Components/FeedNews";
 import FeedSlider from "@/Components/FeedSlider";
 import ServicesSlider from "@/Components/ServicesSlider";
+import HomeHighlights from "@/Components/HomeHighlights";
 import useFetch from "@/Hooks/usefetch";
 import Link from "next/link";
 
@@ -28,7 +29,7 @@ export default function Home() {
   const latestArticles = data?.articles.slice(1) ?? [];
 
   return (
-    <main className="w-4/5 mx-auto px-4 py-12 md:py-20">
+    <main className="site-container px-4 py-12 md:py-20">
       <div className="mb-8 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
@@ -60,7 +61,7 @@ export default function Home() {
           {featuredArticle && <FeedNews article={featuredArticle} />}
 
           {latestArticles.length > 0 && (
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-6 md:grid-cols-2">
               {latestArticles.map((article) => (
                 <article key={article.id} className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-md">
                   <div className="flex items-center justify-between gap-4">
@@ -94,6 +95,7 @@ export default function Home() {
     
       </div>
           <ServicesSlider />
+          <HomeHighlights />
     </main>
   );
 }

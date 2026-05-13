@@ -1,5 +1,7 @@
+"use client"
 import Image from "next/image";
 import React from 'react'
+import ListenControls from '@/Components/ListenControls'
 
 interface ArticleProps {
   title: string;
@@ -17,6 +19,9 @@ interface Props {
 }
 
 export default function FeedNews({ article }: Props) {
+  
+  
+
   return (
     <div className="rounded-4xl border border-slate-200 bg-white shadow-xl overflow-hidden">
       <div className="relative h-80 overflow-hidden">
@@ -54,6 +59,7 @@ export default function FeedNews({ article }: Props) {
             <p className="text-sm uppercase tracking-[0.18em] text-slate-500">{article.authorRole}</p>
           </div>
         </div>
+        <ListenControls text={`${article.title}. ${article.description}`} gender="female" />
       </div>
     </div>
   )

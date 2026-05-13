@@ -68,7 +68,7 @@ const Navbar = () => {
           ? (isDark ? 'bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 shadow-2xl' : 'bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-lg') 
           : (isDark ? 'bg-zinc-950' : 'bg-white')
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="site-container px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 md:h-24">
             
             {/* Logo Section */}
