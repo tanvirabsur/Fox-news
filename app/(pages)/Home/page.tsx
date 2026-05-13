@@ -5,8 +5,9 @@ export default function Page() {
 
 
   return (
-    <>
-    </>
+    <main className="w-4/5 mx-auto px-4 py-12 md:py-20">
+      {/* Home page content placeholder - adjust as needed */}
+    </main>
      
       // <main className="max-w-7xl mx-auto px-4 py-12 md:py-20">
       //   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">

@@ -179,7 +179,7 @@ const Navbar = () => {
             <div className="pt-8 space-y-4">
               <button className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold shadow-lg shadow-indigo-600/20">Subscribe Now</button>
               <button className={`w-full py-4 rounded-2xl font-bold border transition-all ${
-                isDarkMode ? 'border-zinc-800 text-white hover:bg-zinc-900' : 'border-slate-200 text-slate-900 hover:bg-slate-50'
+                isDark ? 'border-zinc-800 text-white hover:bg-zinc-900' : 'border-slate-200 text-slate-900 hover:bg-slate-50'
               }`}>Sign In</button>
             </div>
           </div>
